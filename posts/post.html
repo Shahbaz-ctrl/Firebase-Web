@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="./post.css">
+</head>
+<body>
+      <!-- navbar here -->
+      <div class="navbarMain">
+        <div>
+          <button class="btn btn-primary" id="allPostButton">All Posts</button>
+          <button class="btn btn-primary" id="myPostButton">My Posts</button>
+          <button class="btn btn-primary" id="newPostButton">
+            Create new post
+          </button>
+        </div>
+        <a href="../dashboard/dashboard.html"> <button class="btn btn-primary">Back</button> </a>
+      </div>
+  
+      <!-- here is the div that will do all the above tasks by refresshing -->
+      <div class="mainDivForTasks" id="taskMakerDiv">
+        <!-- form for creating a new usere below  -->
+        <form id="mainFormCreateUser">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Post heading</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="postHeading"
+              aria-describedby="emailHelp"
+            />
+            <h5>Write a small heading for your post.</h5>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Post text</label
+            >
+            <input type="text" class="form-control" id="postText" />
+          </div>
+          <button type="button" class="btn btn-primary" id="createNewPostButton">
+            Create !
+          </button>
+        </form>
+        <!-- here is the div for my posts below -->
+        <div id="myPostsDiv">hi</div>
+        <!-- here is the div for all of the posts below -->
+        <div id="allPostsDiv">hi</div>
+      </div>
+  
+      <!-- --------- -->
+      <!-- loadin / fethcing loader -->
+      <div style="display: none" id="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+  
+      <!-- --------- -->
+      <!-- Modal for Pop-Up Messages -->
+      <div id="popupModal" class="modal">
+        <div class="modal-content">
+          <p id="modalMessage"></p>
+          <button class="btn btn-primary" onclick="closeModal()">OK</button>
+        </div>
+      </div>
+  
+      <!-- Edit Post Modal -->
+      <div id="editModal" class="modal">
+        <div class="modal-content">
+          <h2>Edit Post</h2>
+          <input
+            type="text"
+            id="editPostHeading"
+            class="form-control"
+            placeholder="Edit Heading"
+          />
+          <input
+            type="text"
+            id="editPostText"
+            class="form-control"
+            placeholder="Edit Text"
+          />
+          <button class="btn btn-primary" id="updatePostButton">Update</button>
+          <button class="btn btn-secondary" onclick="closeEditModal()">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+    
+    <script src="./post.js" type="module"></script>
+</body>
+</html>
